@@ -17,6 +17,14 @@ for(let i = 0; i < arrayImages.length; i++) {
     newImage.setAttribute('src', `./images/${arrayImages[i]}`);
     newImage.setAttribute('alt', `./images/${arrayImages[i]}`);
     thumbBar.appendChild(newImage);
+    newImage.addEventListener("click",e => {
+        displayedImage.src = e.target.src;
+        displayedImage.alt = e.target.alt;
+    } )
+}
+
+function setImage(src) {
+
 }
 
 /* Wiring up the Darken/Lighten button */
