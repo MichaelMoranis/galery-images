@@ -12,10 +12,10 @@ let arrayImages = ["pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg"];
 
 /* Looping through images */
 
-for(let i = 0; i < arrayImages.length; i++) {
+for(const image of arrayImages) {
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', `./images/${arrayImages[i]}`);
-    newImage.setAttribute('alt', `./images/${arrayImages[i]}`);
+    newImage.setAttribute('src', `./images/${image}`);
+    newImage.setAttribute('alt', `./images/${image}`);
     thumbBar.appendChild(newImage);
     newImage.addEventListener("click",e => {
         displayedImage.src = e.target.src;
@@ -26,13 +26,13 @@ for(let i = 0; i < arrayImages.length; i++) {
 btn.addEventListener("click", () => {
     const btnClass = btn.getAttribute("class");
     if(btnClass === "dark") {
-       btnClass.setAttribute("light");
-       btn.textContent = "lighten";
+       btn.setAttribute("class", "light");
+       btn.textContent = "light";
        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
     } else {
-        btnClass.setAttribute("dark");
-        btn.textContent = "Dark";
-        overlay.style.backgroundColor = "light";
+        btn.setAttribute("class", "dark");
+        btn.textContent = "dark";
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
     }
 })
 
